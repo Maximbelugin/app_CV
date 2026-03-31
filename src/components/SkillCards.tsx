@@ -140,52 +140,54 @@ export function SkillCards() {
   return (
     <div
       ref={containerRef}
-      className="w-full py-20 px-4 sm:px-6 lg:px-8 bg-white"
+      className="w-full py-14 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-14">
           <span className="text-sm font-medium tracking-wider text-blue-600 uppercase">
             Компетенции
           </span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
+          <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             Навыки по направлениям
           </h2>
-          <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
             Полный стек инструментов для работы на стыке бизнеса и технологий
           </p>
         </div>
 
         {/* 3×2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
           {skillCategories.map((category, index) => (
             <div
               key={category.title}
               ref={(el) => {
                 if (el) cardsRef.current[index] = el;
               }}
-              className={`group relative bg-white rounded-2xl p-7
+              className={`group relative bg-white rounded-2xl p-4 sm:p-5 lg:p-7
                          border-2 ${category.borderColor}
                          hover:shadow-xl hover:scale-[1.02]
                          transition-all duration-300 cursor-default overflow-hidden`}
             >
               {/* Decorative corner blob */}
               <div
-                className={`absolute top-0 right-0 w-28 h-28 ${category.bgColor} opacity-40
+                className={`absolute top-0 right-0 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 ${category.bgColor} opacity-40
                            rounded-bl-full -z-0 group-hover:scale-150 transition-transform duration-500`}
               />
 
               {/* Header */}
-              <div className="relative flex items-center gap-4 mb-5">
+              <div className="relative flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
                 <div
-                  className={`w-14 h-14 rounded-xl ${category.bgColor} ${category.color}
+                  className={`w-11 h-11 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl ${category.bgColor} ${category.color}
                               flex items-center justify-center flex-shrink-0
                               group-hover:scale-110 transition-transform duration-300`}
                 >
-                  {category.icon}
+                  <span className="scale-75 sm:scale-90 lg:scale-100">
+                    {category.icon}
+                  </span>
                 </div>
                 <h3
-                  className={`text-lg font-bold ${category.color} leading-snug`}
+                  className={`text-base sm:text-lg font-bold ${category.color} leading-snug`}
                 >
                   {category.title}
                 </h3>
@@ -196,7 +198,7 @@ export function SkillCards() {
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className={`px-3 py-1.5 rounded-full text-sm font-medium
+                    className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium
                                ${category.bgColor} ${category.color}
                                border ${category.borderColor}
                                hover:brightness-95 transition-all duration-200`}

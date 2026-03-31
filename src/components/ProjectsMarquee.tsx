@@ -29,7 +29,7 @@ const projects: Project[] = [
     description:
       "Автоматизация расчётов процентного риска и мониторинг отклонений в реальном времени",
     result: "Сокращение времени расчётов на 60%",
-    icon: <TrendingUp className="w-5 h-5" />,
+    icon: <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />,
     color: "bg-blue-500",
   },
   {
@@ -37,7 +37,7 @@ const projects: Project[] = [
     description:
       "Прогнозные модели и интерактивные дашборды по макроэкономическим показателям банка",
     result: "Охват 100% KPI аналитического направления",
-    icon: <PieChart className="w-5 h-5" />,
+    icon: <PieChart className="w-4 h-4 sm:w-5 sm:h-5" />,
     color: "bg-indigo-500",
   },
   {
@@ -45,7 +45,7 @@ const projects: Project[] = [
     description:
       "A/B тестирование и анализ ценовой эластичности спроса на вкладные продукты",
     result: "Результаты легли в основу продуктовой стратегии",
-    icon: <BarChart3 className="w-5 h-5" />,
+    icon: <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5" />,
     color: "bg-violet-500",
   },
   {
@@ -53,7 +53,7 @@ const projects: Project[] = [
     description:
       "Мониторинг продуктовых матриц и процентных ставок банков-конкурентов",
     result: "Покрытие 20+ банков в режиме реального времени",
-    icon: <Building2 className="w-5 h-5" />,
+    icon: <Building2 className="w-4 h-4 sm:w-5 sm:h-5" />,
     color: "bg-cyan-500",
   },
   {
@@ -61,7 +61,7 @@ const projects: Project[] = [
     description:
       "Сравнительный анализ инвестиционных портфелей и расчёт отраслевых бенчмарков",
     result: "Автоматизация ежедневной отчётности",
-    icon: <Landmark className="w-5 h-5" />,
+    icon: <Landmark className="w-4 h-4 sm:w-5 sm:h-5" />,
     color: "bg-teal-500",
   },
   {
@@ -69,7 +69,7 @@ const projects: Project[] = [
     description:
       "BI-решения и аналитические витрины данных для дочерних и зависимых организаций",
     result: "Консолидация данных 5+ дочерних структур",
-    icon: <LayoutDashboard className="w-5 h-5" />,
+    icon: <LayoutDashboard className="w-4 h-4 sm:w-5 sm:h-5" />,
     color: "bg-emerald-500",
   },
   {
@@ -77,7 +77,7 @@ const projects: Project[] = [
     description:
       "Построение методологии расчёта и аналитической инфраструктуры индекса бизнес-настроений",
     result: "Опубликован как официальный индикатор ПСБ",
-    icon: <TrendingUp className="w-5 h-5" />,
+    icon: <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />,
     color: "bg-amber-500",
   },
   {
@@ -85,7 +85,7 @@ const projects: Project[] = [
     description:
       "Авторский курс по банковской аналитике: программа, материалы, проведение",
     result: "50+ сотрудников прошли обучение",
-    icon: <GraduationCap className="w-5 h-5" />,
+    icon: <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5" />,
     color: "bg-orange-500",
   },
   {
@@ -93,7 +93,7 @@ const projects: Project[] = [
     description:
       "Тестирование и внедрение GenAI/LLM-инструментов для оптимизации процессов банка",
     result: "AI-агенты внедрены в 2 подразделения",
-    icon: <Bot className="w-5 h-5" />,
+    icon: <Bot className="w-4 h-4 sm:w-5 sm:h-5" />,
     color: "bg-rose-500",
   },
 ];
@@ -129,7 +129,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <div
       ref={cardRef}
-      className="project-card group flex flex-col bg-white rounded-2xl p-6
+      className="project-card group flex flex-col bg-white rounded-2xl p-4 sm:p-5 lg:p-6
                  border border-gray-100 shadow-sm
                  hover:shadow-md hover:-translate-y-0.5
                  transition-all duration-300"
@@ -137,19 +137,19 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       {/* Icon + Title */}
       <div className="flex items-start gap-3 mb-3">
         <div
-          className={`w-9 h-9 rounded-lg ${project.color} flex items-center justify-center
+          className={`w-8 h-8 sm:w-9 sm:h-9 rounded-lg ${project.color} flex items-center justify-center
                       text-white flex-shrink-0 mt-0.5
                       group-hover:scale-110 transition-transform duration-300`}
         >
           {project.icon}
         </div>
-        <h3 className="text-[0.9375rem] font-bold text-gray-900 leading-snug">
+        <h3 className="text-sm sm:text-[0.9375rem] font-bold text-gray-900 leading-snug">
           {project.name}
         </h3>
       </div>
 
       {/* Description */}
-      <p className="text-sm text-gray-500 leading-relaxed flex-1 mb-4">
+      <p className="text-sm text-gray-500 leading-relaxed flex-1 mb-3 sm:mb-4">
         {project.description}
       </p>
 
@@ -158,7 +158,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <span
           className="inline-flex items-center gap-1.5 px-2.5 py-1
                        bg-emerald-50 text-emerald-700 rounded-full
-                       text-xs font-semibold"
+                       text-[11px] sm:text-xs font-semibold"
         >
           <span className="text-emerald-500 text-[10px]">✓</span>
           {project.result}
@@ -212,23 +212,23 @@ export function ProjectsMarquee() {
   }, [showAll]);
 
   return (
-    <section className="w-full py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section className="w-full py-14 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div ref={headerRef} className="text-center mb-12">
+        <div ref={headerRef} className="text-center mb-10 sm:mb-12">
           <span className="text-sm font-medium tracking-wider text-blue-600 uppercase">
             Реализованные решения
           </span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
+          <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             Успешные проекты
           </h2>
-          <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
             Аналитические сервисы и BI-решения для крупнейших банков России
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {visibleProjects.map((project, index) => (
             <ProjectCard key={project.name} project={project} index={index} />
           ))}
@@ -239,7 +239,7 @@ export function ProjectsMarquee() {
           <div ref={btnRef} className="mt-10 text-center">
             <button
               onClick={() => setShowAll(true)}
-              className="inline-flex items-center gap-2 px-7 py-3
+              className="inline-flex w-full sm:w-auto justify-center items-center gap-2 px-6 sm:px-7 py-3.5
                          bg-white text-gray-700 rounded-full font-medium text-sm
                          border border-gray-200
                          hover:border-blue-400 hover:text-blue-600 hover:shadow-sm

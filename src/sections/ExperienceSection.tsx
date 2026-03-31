@@ -147,18 +147,18 @@ export function ExperienceSection() {
     <section
       ref={sectionRef}
       id="experience"
-      className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50"
+      className="w-full py-14 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16">
           <span className="text-sm font-medium tracking-wider text-blue-600 uppercase">
             Карьерный путь
           </span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
+          <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             Опыт работы
           </h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             20+ лет в банковском секторе: от специалиста казначейства до Head of
             Business Analytics
           </p>
@@ -167,15 +167,15 @@ export function ExperienceSection() {
         {/* Timeline */}
         <div ref={timelineRef} className="relative">
           {/* Vertical line — left edge */}
-          <div className="absolute left-[1.9rem] top-0 bottom-0 w-px bg-gradient-to-b from-blue-500 via-blue-300 to-blue-100" />
+          <div className="hidden sm:block absolute left-[1.9rem] top-0 bottom-0 w-px bg-gradient-to-b from-blue-500 via-blue-300 to-blue-100" />
 
           {/* Experience Cards */}
-          <div className="space-y-8">
+          <div className="space-y-5 sm:space-y-6 lg:space-y-8">
             {experiences.map((exp, index) => (
-              <div key={exp.bank} className="experience-card relative pl-20">
+              <div key={exp.bank} className="experience-card relative pl-0 sm:pl-20">
                 {/* Timeline dot */}
                 <div
-                  className={`absolute left-[1.9rem] top-7 w-[14px] h-[14px] rounded-full border-[3px] border-white shadow-md -translate-x-1/2 z-10 transition-transform duration-300 ${
+                  className={`hidden sm:block absolute left-[1.9rem] top-7 w-[14px] h-[14px] rounded-full border-[3px] border-white shadow-md -translate-x-1/2 z-10 transition-transform duration-300 ${
                     activeIndex === index ? "scale-125" : "scale-100"
                   }`}
                   style={{ backgroundColor: exp.bankColor }}
@@ -185,22 +185,22 @@ export function ExperienceSection() {
                 <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300">
                   <div className="flex flex-col lg:flex-row">
                     {/* ── Left panel: role + responsibilities ── */}
-                    <div className="flex-[3] min-w-0 p-6">
+                    <div className="flex-[3] min-w-0 p-4 sm:p-5 lg:p-6">
                       {/* Bank badge + period */}
-                      <div className="flex flex-wrap items-center gap-2.5 mb-3">
+                      <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-2 mb-3">
                         <span
-                          className="inline-block px-3 py-1 rounded-full text-white text-xs font-bold tracking-wide"
+                          className="inline-block px-3 py-1 rounded-full text-white text-[11px] sm:text-xs font-bold tracking-wide"
                           style={{ backgroundColor: exp.bankColor }}
                         >
                           {exp.bank}
                         </span>
-                        <span className="text-sm font-medium text-blue-600">
+                        <span className="text-xs sm:text-sm font-medium text-blue-600">
                           {exp.period}
                         </span>
                       </div>
 
                       {/* Position */}
-                      <h3 className="text-base font-bold text-gray-900 leading-snug mb-4">
+                      <h3 className="text-sm sm:text-base font-bold text-gray-900 leading-snug mb-3 sm:mb-4">
                         {exp.position}
                       </h3>
 
@@ -209,7 +209,7 @@ export function ExperienceSection() {
                         {exp.description.map((item, idx) => (
                           <li
                             key={idx}
-                            className="flex items-start gap-2.5 text-sm text-gray-600 leading-relaxed"
+                            className="flex items-start gap-2 text-sm text-gray-600 leading-relaxed"
                           >
                             <span
                               className="mt-[6px] w-[6px] h-[6px] rounded-full flex-shrink-0"
@@ -222,7 +222,7 @@ export function ExperienceSection() {
                     </div>
 
                     {/* ── Right panel: key achievements ── */}
-                    <div className="flex-[2] min-w-0 p-6 bg-slate-50/70 border-t border-gray-100 lg:border-t-0 lg:border-l lg:border-gray-100">
+                    <div className="flex-[2] min-w-0 p-4 sm:p-5 lg:p-6 bg-slate-50/70 border-t border-gray-100 lg:border-t-0 lg:border-l lg:border-gray-100">
                       <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-gray-400 mb-3">
                         Ключевые результаты
                       </p>
@@ -230,7 +230,7 @@ export function ExperienceSection() {
                         {exp.achievements.map((item, idx) => (
                           <li
                             key={idx}
-                            className="flex items-start gap-2.5 text-sm text-gray-700 leading-relaxed"
+                            className="flex items-start gap-2 text-sm text-gray-700 leading-relaxed"
                           >
                             <span
                               className="mt-[3px] flex-shrink-0 text-xs font-bold leading-none"

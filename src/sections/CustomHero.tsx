@@ -137,7 +137,7 @@ export function CustomHero() {
     <section
       ref={sectionRef}
       id="about"
-      className="relative min-h-screen w-full flex flex-col overflow-hidden"
+      className="relative min-h-[100svh] w-full flex flex-col overflow-hidden"
     >
       {/* Background */}
       <div
@@ -156,15 +156,15 @@ export function CustomHero() {
       {/* Content */}
       <div
         ref={contentRef}
-        className="relative z-10 flex-1 flex flex-col w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-18 pb-4"
+        className="relative z-10 flex-1 flex flex-col w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-20 pb-6 sm:pb-8"
       >
         {/* Top section: Name + Photo */}
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
           {/* Left: Text Content */}
-          <div className="space-y-6">
+          <div className="space-y-5 sm:space-y-6">
             {/* Name */}
             <div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-[1.05]">
                 <DecodeText
                   text="Максим"
                   delay={0.3}
@@ -182,15 +182,15 @@ export function CustomHero() {
 
             {/* Title */}
             <div className="space-y-1">
-              <h2 className="text-xl md:text-2xl font-semibold text-gray-500 tracking-wide">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-500 tracking-normal sm:tracking-wide leading-snug">
                 Руководитель проектов&nbsp;/ Бизнес- и системный аналитик
               </h2>
             </div>
 
             {/* Description */}
             {showContent && (
-              <div className="animate-fadeIn py-6">
-                <ul className="space-y-3.5">
+              <div className="animate-fadeIn py-3 sm:py-4 lg:py-6">
+                <ul className="space-y-3 sm:space-y-3.5">
                   {[
                     "Глубокая экспертиза в финансах и банковских процессах",
                     "Опыт управления проектами и кросс-функциональными инициативами",
@@ -199,9 +199,9 @@ export function CustomHero() {
                   ].map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-3 text-[1.0625rem] text-gray-600 leading-[1.75]"
+                      className="flex items-start gap-2.5 sm:gap-3 text-base sm:text-[1.0625rem] text-gray-600 leading-[1.6] sm:leading-[1.75]"
                     >
-                      <span className="mt-[9px] w-[6px] h-[6px] rounded-full bg-blue-500 flex-shrink-0" />
+                      <span className="mt-[8px] sm:mt-[9px] w-[6px] h-[6px] rounded-full bg-blue-500 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -211,10 +211,10 @@ export function CustomHero() {
 
             {/* Contact Info */}
             {showContent && (
-              <div className="flex flex-wrap gap-3 animate-fadeIn">
+              <div className="grid grid-cols-1 sm:flex sm:flex-wrap gap-2.5 sm:gap-3 animate-fadeIn">
                 <a
                   href="mailto:m.8elugin@yandex.ru"
-                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600 transition-colors break-all sm:break-normal"
                 >
                   <Mail className="w-4 h-4" />
                   <span>m.8elugin@yandex.ru</span>
@@ -237,10 +237,10 @@ export function CustomHero() {
 
             {/* CTA Buttons */}
             {showContent && (
-              <div className="flex flex-wrap gap-3 animate-fadeIn">
+              <div className="grid grid-cols-1 sm:flex sm:flex-wrap gap-2.5 sm:gap-3 animate-fadeIn">
                 <a
                   href="mailto:m.8elugin@yandex.ru"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-full font-semibold text-sm
+                  className="inline-flex w-full sm:w-auto justify-center items-center gap-2 px-6 py-3.5 sm:py-3 bg-blue-600 text-white rounded-full font-semibold text-sm
                            hover:bg-blue-700 hover:scale-105 hover:shadow-lg
                            transition-all duration-300"
                 >
@@ -250,7 +250,7 @@ export function CustomHero() {
                 <a
                   href={resumePdfUrl}
                   download
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-700 border-2 border-gray-200 rounded-full font-semibold text-sm
+                  className="inline-flex w-full sm:w-auto justify-center items-center gap-2 px-6 py-3.5 sm:py-3 bg-white text-gray-700 border-2 border-gray-200 rounded-full font-semibold text-sm
                            hover:border-blue-600 hover:text-blue-600 hover:scale-105
                            transition-all duration-300"
                 >
@@ -264,15 +264,15 @@ export function CustomHero() {
           {/* Right: Photo */}
           <div
             ref={imageRef}
-            className="relative flex justify-center lg:justify-end lg:pt-[7.75rem]"
+            className="relative flex justify-center lg:justify-end lg:pt-[5.5rem] mt-2 sm:mt-4 lg:mt-0"
           >
             <div className="relative">
               {/* Soft atmospheric glow — diffuse, no hard edges */}
-              <div className="absolute -inset-10 bg-blue-200/50 rounded-full blur-3xl" />
-              <div className="absolute -inset-4 bg-blue-100/40 rounded-full blur-2xl" />
+              <div className="absolute -inset-7 sm:-inset-8 lg:-inset-10 bg-blue-200/50 rounded-full blur-3xl" />
+              <div className="absolute -inset-3 sm:-inset-4 bg-blue-100/40 rounded-full blur-2xl" />
 
               {/* Photo with feathered / masked edges */}
-              <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem]">
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem]">
                 <img
                   src={profilePhotoUrl}
                   alt="Максим Белугин"
@@ -287,13 +287,13 @@ export function CustomHero() {
               </div>
 
               {/* Floating badges */}
-              <div className="absolute bottom-2 -left-6 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-3 border border-gray-100">
-                <div className="text-2xl font-bold text-blue-600">20+</div>
+              <div className="absolute bottom-1 sm:bottom-2 -left-2 sm:-left-4 lg:-left-6 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg px-2.5 py-2 sm:p-3 border border-gray-100">
+                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-600">20+</div>
                 <div className="text-xs text-gray-500">лет опыта</div>
               </div>
 
-              <div className="absolute top-2 -right-6 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-3 border border-gray-100">
-                <div className="text-base font-bold text-emerald-600">15+</div>
+              <div className="absolute top-1 sm:top-2 -right-2 sm:-right-4 lg:-right-6 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg px-2.5 py-2 sm:p-3 border border-gray-100">
+                <div className="text-sm sm:text-base font-bold text-emerald-600">15+</div>
                 <div className="text-xs text-gray-500">успешных проектов</div>
               </div>
             </div>
@@ -302,12 +302,12 @@ export function CustomHero() {
 
         {/* Skills Strip — pushed to bottom */}
         {showContent && (
-          <div className="mt-auto pt-12 animate-fadeIn">
+          <div className="mt-8 lg:mt-auto pt-8 sm:pt-10 lg:pt-12 animate-fadeIn">
             <div className="border-t border-gray-100 pt-5">
               <p className="text-[10px] font-semibold text-gray-300 uppercase tracking-widest mb-5">
                 Ключевые навыки
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-x-8 gap-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-4 sm:gap-y-5">
                 {skillGroups.map((group, index) => {
                   const isExpanded = expandedGroups.has(index);
                   const visibleSkills = isExpanded
@@ -324,7 +324,7 @@ export function CustomHero() {
                       }
                     >
                       <p
-                        className={`text-[11px] font-bold uppercase tracking-wide mb-3 ${group.titleClass}`}
+                        className={`text-[11px] sm:text-xs font-bold uppercase tracking-wide mb-2.5 sm:mb-3 ${group.titleClass}`}
                       >
                         {group.title}
                       </p>
@@ -332,7 +332,7 @@ export function CustomHero() {
                         {visibleSkills.map((skill) => (
                           <span
                             key={skill}
-                            className={`px-2 py-0.5 rounded text-[11px] font-medium ${group.tagClass} opacity-90`}
+                            className={`px-2 py-1 rounded text-[11px] sm:text-xs font-medium ${group.tagClass} opacity-90`}
                           >
                             {skill}
                           </span>
@@ -340,7 +340,7 @@ export function CustomHero() {
                         {remaining > 0 && !isExpanded && (
                           <button
                             onClick={() => toggleGroup(index)}
-                            className={`px-2 py-0.5 rounded text-[11px] font-semibold
+                            className={`px-2 py-1 rounded text-[11px] sm:text-xs font-semibold
                                        cursor-pointer select-none
                                        ${group.tagClass}
                                        ring-1 ring-inset ring-current/25
@@ -356,7 +356,7 @@ export function CustomHero() {
                         {isExpanded && (
                           <button
                             onClick={() => toggleGroup(index)}
-                            className="px-2 py-0.5 rounded text-[11px] font-semibold
+                            className="px-2 py-1 rounded text-[11px] sm:text-xs font-semibold
                                        cursor-pointer select-none
                                        text-gray-400 bg-gray-50
                                        ring-1 ring-inset ring-gray-200
@@ -376,7 +376,7 @@ export function CustomHero() {
             </div>
 
             {/* Scroll indicator — flush below skills, never overlapping */}
-            <div className="flex flex-col items-center gap-1.5 text-gray-300 mt-8 pb-2">
+            <div className="hidden sm:flex flex-col items-center gap-1.5 text-gray-300 mt-8 pb-2">
               <span className="text-[10px] font-medium tracking-wider uppercase">
                 Прокрутите вниз
               </span>

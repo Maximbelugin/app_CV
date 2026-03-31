@@ -49,14 +49,14 @@ export function Navigation() {
             : "bg-transparent",
         )}
       >
-        <div className="w-full px-6 lg:px-12 py-4">
+        <div className="w-full px-4 sm:px-6 lg:px-12 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             {navigationConfig.logo && (
               <a href="#" className="flex items-center">
                 <span
                   className={cn(
-                    "text-2xl font-semibold tracking-tight transition-colors duration-500",
+                    "text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight transition-colors duration-500",
                     isScrolled ? "text-exvia-black" : "text-gray-800",
                   )}
                 >
@@ -110,30 +110,32 @@ export function Navigation() {
             {navigationConfig.links.length > 0 && (
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="lg:hidden relative w-8 h-6 flex flex-col justify-between"
+                className="lg:hidden relative w-11 h-11 flex items-center justify-center -mr-1"
                 aria-label="Toggle menu"
               >
-                <span
-                  className={cn(
-                    "w-full h-0.5 transition-all duration-500 ease-out-quad origin-center",
-                    isScrolled ? "bg-exvia-black" : "bg-gray-800",
-                    isMenuOpen && "translate-y-[10px] rotate-[-45deg]",
-                  )}
-                />
-                <span
-                  className={cn(
-                    "w-full h-0.5 transition-all duration-300 ease-out-quad",
-                    isScrolled ? "bg-exvia-black" : "bg-gray-800",
-                    isMenuOpen && "scale-0 opacity-0",
-                  )}
-                />
-                <span
-                  className={cn(
-                    "w-full h-0.5 transition-all duration-500 ease-out-quad origin-center",
-                    isScrolled ? "bg-exvia-black" : "bg-gray-800",
-                    isMenuOpen && "-translate-y-[10px] rotate-[45deg]",
-                  )}
-                />
+                <span className="relative w-7 h-5 flex flex-col justify-between">
+                  <span
+                    className={cn(
+                      "w-full h-0.5 transition-all duration-500 ease-out-quad origin-center",
+                      isScrolled ? "bg-exvia-black" : "bg-gray-800",
+                      isMenuOpen && "translate-y-[9px] rotate-[-45deg]",
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      "w-full h-0.5 transition-all duration-300 ease-out-quad",
+                      isScrolled ? "bg-exvia-black" : "bg-gray-800",
+                      isMenuOpen && "scale-0 opacity-0",
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      "w-full h-0.5 transition-all duration-500 ease-out-quad origin-center",
+                      isScrolled ? "bg-exvia-black" : "bg-gray-800",
+                      isMenuOpen && "-translate-y-[9px] rotate-[45deg]",
+                    )}
+                  />
+                </span>
               </button>
             )}
           </div>
@@ -150,14 +152,14 @@ export function Navigation() {
               : "opacity-0 invisible pointer-events-none",
           )}
         >
-          <div className="flex flex-col items-center justify-center h-full gap-8">
+          <div className="flex flex-col items-center justify-center h-full gap-6 px-6">
             {navigationConfig.links.map((link, index) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={cn(
-                  "text-3xl font-semibold text-exvia-black transition-all duration-500 ease-out-quart",
+                  "text-2xl sm:text-3xl font-semibold text-exvia-black transition-all duration-500 ease-out-quart",
                   isMenuOpen
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8",

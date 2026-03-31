@@ -20,16 +20,16 @@ export function CustomFooter() {
   return (
     <footer id="contact" className="w-full bg-gray-900 text-white">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-2 gap-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-16">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16">
           {/* Left: Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
                 Давайте работать
                 <span className="block text-blue-400">вместе</span>
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
                 Открыт к новым профессиональным возможностям в сфере бизнес- и
                 системной аналитики, управления проектами и внедрения
                 data-driven решений.
@@ -43,14 +43,14 @@ export function CustomFooter() {
                 className="flex items-center gap-4 group"
               >
                 <div
-                  className="w-12 h-12 rounded-xl bg-blue-600/20 flex items-center justify-center
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-600/20 flex items-center justify-center
                                 group-hover:bg-blue-600 transition-colors duration-300"
                 >
-                  <Mail className="w-5 h-5 text-blue-400 group-hover:text-white transition-colors" />
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 group-hover:text-white transition-colors" />
                 </div>
                 <div>
                   <div className="text-sm text-gray-500">Email</div>
-                  <div className="text-lg group-hover:text-blue-400 transition-colors">
+                  <div className="text-base sm:text-lg break-all sm:break-normal group-hover:text-blue-400 transition-colors">
                     m.8elugin@yandex.ru
                   </div>
                 </div>
@@ -63,26 +63,26 @@ export function CustomFooter() {
                 className="flex items-center gap-4 group"
               >
                 <div
-                  className="w-12 h-12 rounded-xl bg-blue-600/20 flex items-center justify-center
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-600/20 flex items-center justify-center
                                 group-hover:bg-blue-600 transition-colors duration-300"
                 >
-                  <Send className="w-5 h-5 text-blue-400 group-hover:text-white transition-colors" />
+                  <Send className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 group-hover:text-white transition-colors" />
                 </div>
                 <div>
                   <div className="text-sm text-gray-500">Telegram</div>
-                  <div className="text-lg group-hover:text-blue-400 transition-colors">
+                  <div className="text-base sm:text-lg group-hover:text-blue-400 transition-colors">
                     @Belugin_ma
                   </div>
                 </div>
               </a>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-600/20 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-blue-400" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-600/20 flex items-center justify-center">
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
                 </div>
                 <div>
                   <div className="text-sm text-gray-500">Локация</div>
-                  <div className="text-lg">Москва, Россия</div>
+                  <div className="text-base sm:text-lg">Москва, Россия</div>
                 </div>
               </div>
             </div>
@@ -109,8 +109,8 @@ export function CustomFooter() {
           </div>
 
           {/* Right: Contact Form */}
-          <div className="bg-gray-800 rounded-3xl p-8">
-            <h3 className="text-2xl font-bold mb-6">Отправить сообщение</h3>
+          <div className="bg-gray-800 rounded-3xl p-5 sm:p-6 lg:p-8">
+            <h3 className="text-xl sm:text-2xl font-bold mb-5 sm:mb-6">Отправить сообщение</h3>
 
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
@@ -137,7 +137,7 @@ export function CustomFooter() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full px-4 py-3 bg-gray-700 rounded-xl border border-gray-600
+                    className="w-full px-4 py-3.5 bg-gray-700 rounded-xl border border-gray-600
                              focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20
                              text-white placeholder-gray-500 transition-all duration-300"
                     placeholder="your@email.com"
@@ -157,7 +157,7 @@ export function CustomFooter() {
                     onChange={(e) => setMessage(e.target.value)}
                     required
                     rows={4}
-                    className="w-full px-4 py-3 bg-gray-700 rounded-xl border border-gray-600
+                    className="w-full px-4 py-3.5 bg-gray-700 rounded-xl border border-gray-600
                              focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20
                              text-white placeholder-gray-500 transition-all duration-300 resize-none"
                     placeholder="Расскажите о вашем проекте..."
@@ -166,11 +166,11 @@ export function CustomFooter() {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-blue-600
+                  className="w-full flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 bg-blue-600
                            rounded-xl font-semibold hover:bg-blue-700 hover:scale-[1.02]
                            transition-all duration-300"
                 >
-                  <Send className="w-5 h-5" />
+                  <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                   Отправить сообщение
                 </button>
               </form>
@@ -182,12 +182,12 @@ export function CustomFooter() {
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
             <div className="text-gray-500 text-sm">
               © 2025 Максим Белугин. Все права защищены.
             </div>
 
-            <div className="flex items-center gap-6 text-sm text-gray-500">
+            <div className="flex flex-wrap justify-center md:justify-end items-center gap-x-4 gap-y-1 text-xs sm:text-sm text-gray-500">
               <span>Sber 500 × INSEAD</span>
               <span>•</span>
               <span>Аналитик данных — Карпов курсы</span>
