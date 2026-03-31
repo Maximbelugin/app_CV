@@ -268,8 +268,8 @@ export function CustomHero() {
           >
             <div className="relative">
               {/* Soft atmospheric glow — diffuse, no hard edges */}
-              <div className="absolute -inset-7 sm:-inset-8 lg:-inset-10 bg-blue-200/50 rounded-full blur-3xl" />
-              <div className="absolute -inset-3 sm:-inset-4 bg-blue-100/40 rounded-full blur-2xl" />
+              <div className="hidden sm:block absolute sm:-inset-8 lg:-inset-10 bg-blue-200/50 rounded-full blur-3xl" />
+              <div className="hidden sm:block absolute sm:-inset-4 bg-blue-100/40 rounded-full blur-2xl" />
 
               {/* Photo with feathered / masked edges */}
               <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem]">
