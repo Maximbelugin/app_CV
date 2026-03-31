@@ -5,6 +5,10 @@ import { DecodeText } from "../components/DecodeText";
 import { Mail, Send, MapPin, Download } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
+const baseUrl = import.meta.env.BASE_URL;
+const heroBgUrl = `${baseUrl}images/hero-bg.jpg`;
+const profilePhotoUrl = `${baseUrl}images/photo.png`;
+const resumePdfUrl = `${baseUrl}Maxim_Belugin_Head_of_Product.pdf`;
 
 const skillGroups = [
   {
@@ -139,7 +143,7 @@ export function CustomHero() {
       <div
         className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-gray-100"
         style={{
-          backgroundImage: "url(/images/hero-bg.jpg)",
+          backgroundImage: `url(${heroBgUrl})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           opacity: 0.4,
@@ -244,7 +248,7 @@ export function CustomHero() {
                   Связаться
                 </a>
                 <a
-                  href="/Maxim_Belugin_Head_of_Product.pdf"
+                  href={resumePdfUrl}
                   download
                   className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-700 border-2 border-gray-200 rounded-full font-semibold text-sm
                            hover:border-blue-600 hover:text-blue-600 hover:scale-105
@@ -270,7 +274,7 @@ export function CustomHero() {
               {/* Photo with feathered / masked edges */}
               <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem]">
                 <img
-                  src="/images/photo.png"
+                  src={profilePhotoUrl}
                   alt="Максим Белугин"
                   className="w-full h-full object-cover object-top"
                   style={{
