@@ -31,6 +31,26 @@ npm install
 npm run dev
 ```
 
+## Contact Form (EmailJS)
+
+The contact form in `src/sections/CustomFooter.tsx` sends emails via EmailJS.
+
+1. Create `.env.local` from `.env.example`.
+2. Fill values from your EmailJS dashboard:
+   - `VITE_EMAILJS_SERVICE_ID`
+   - `VITE_EMAILJS_TEMPLATE_ID`
+   - `VITE_EMAILJS_PUBLIC_KEY`
+3. Optional recipient override:
+   - `VITE_CONTACT_TO_EMAIL`
+
+Template params sent from the form:
+- `from_email`
+- `reply_to`
+- `message`
+- `to_email`
+- `subject`
+- `source_url`
+
 ## Configuration
 
 All site content is managed through `src/config.ts`. Each section has its own configuration object with TypeScript interfaces for type safety. When a config object has empty values, the corresponding section returns `null` and is not rendered.

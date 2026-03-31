@@ -1,20 +1,60 @@
 import { useState } from "react";
 import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export function CustomFooter() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
+    setSubmitError("");
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const toEmail = import.meta.env.VITE_CONTACT_TO_EMAIL || "m.8elugin@yandex.ru";
+
+    if (!serviceId || !templateId || !publicKey) {
+      setSubmitError(
+        "Форма не настроена: добавьте VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID и VITE_EMAILJS_PUBLIC_KEY в .env.local",
+      );
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_email: email,
+          reply_to: email,
+          message,
+          to_email: toEmail,
+          subject: "Новое сообщение с сайта-резюме",
+          source_url: window.location.href,
+        },
+        { publicKey },
+      );
+
+      setIsSubmitted(true);
       setEmail("");
       setMessage("");
-    }, 3000);
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 3000);
+    } catch (error) {
+      console.error("EmailJS send failed:", error);
+      setSubmitError(
+        "Не удалось отправить сообщение. Проверьте настройки EmailJS и попробуйте снова.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -166,13 +206,17 @@ export function CustomFooter() {
 
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 bg-blue-600
                            rounded-xl font-semibold hover:bg-blue-700 hover:scale-[1.02]
-                           transition-all duration-300"
+                           transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   <Send className="w-4 h-4 sm:w-5 sm:h-5" />
-                  Отправить сообщение
+                  {isSubmitting ? "Отправка..." : "Отправить сообщение"}
                 </button>
+                {submitError && (
+                  <p className="text-sm text-red-400 leading-relaxed">{submitError}</p>
+                )}
               </form>
             )}
           </div>
