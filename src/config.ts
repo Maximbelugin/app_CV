@@ -32,9 +32,10 @@ export const navigationConfig: NavigationConfig = {
     { label: "Опыт", href: "#experience" },
     { label: "Навыки", href: "#skills" },
     { label: "Проекты", href: "#projects" },
+    { label: "Контакты", href: "#contact-title" },
   ],
   contactLabel: "Связаться",
-  contactHref: "#contact",
+  contactHref: "#contact-title",
 };
 
 // Hero section configuration

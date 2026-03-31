@@ -29,7 +29,10 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (
+    e: MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+    href: string,
+  ) => {
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
@@ -97,6 +100,9 @@ export function Navigation() {
               <div className="hidden lg:block">
                 <AnimatedButton
                   href={navigationConfig.contactHref || "#contact"}
+                  onClick={(e) =>
+                    handleNavClick(e, navigationConfig.contactHref || "#contact")
+                  }
                   variant={isScrolled ? "primary" : "outline"}
                   size="md"
                   className="rounded-full"
@@ -174,6 +180,9 @@ export function Navigation() {
             {navigationConfig.contactLabel && (
               <AnimatedButton
                 href={navigationConfig.contactHref || "#contact"}
+                onClick={(e) =>
+                  handleNavClick(e, navigationConfig.contactHref || "#contact")
+                }
                 variant="primary"
                 size="lg"
                 className={cn(

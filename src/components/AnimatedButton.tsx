@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 interface AnimatedButtonProps {
   children: ReactNode;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
   href?: string;
   variant?: 'primary' | 'secondary' | 'outline' | 'outline-white';
   size?: 'sm' | 'md' | 'lg';
@@ -77,6 +77,7 @@ export function AnimatedButton({
         href={href}
         className={baseStyles}
         style={style}
+        onClick={onClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

@@ -65,7 +65,7 @@ export function CustomFooter() {
           {/* Left: Contact Info */}
           <div className="space-y-6 sm:space-y-8">
             <div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
+              <h2 id="contact-title" className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 leading-tight">
                 Давайте работать
                 <span className="block text-blue-400">вместе</span>
               </h2>
