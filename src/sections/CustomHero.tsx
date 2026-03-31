@@ -319,56 +319,56 @@ export function CustomHero() {
                       key={group.title}
                       className={
                         index === 0
-                          ? "col-span-2 md:col-span-1 lg:col-span-2"
-                          : ""
+                          ? "lg:col-span-2 rounded-xl border border-gray-100/90 bg-white/70 p-3 sm:p-0 sm:border-0 sm:bg-transparent"
+                          : "rounded-xl border border-gray-100/90 bg-white/70 p-3 sm:p-0 sm:border-0 sm:bg-transparent"
                       }
                     >
                       <p
-                        className={`text-[11px] sm:text-xs font-bold uppercase tracking-wide mb-2.5 sm:mb-3 ${group.titleClass}`}
+                        className={`text-[11px] sm:text-xs font-bold uppercase tracking-wide leading-snug mb-2.5 sm:mb-3 ${group.titleClass}`}
                       >
                         {group.title}
                       </p>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 min-w-0">
                         {visibleSkills.map((skill) => (
                           <span
                             key={skill}
-                            className={`px-2 py-1 rounded text-[11px] sm:text-xs font-medium ${group.tagClass} opacity-90`}
+                            className={`px-2 py-1 rounded text-[11px] sm:text-xs font-medium leading-relaxed whitespace-normal break-words max-w-full ${group.tagClass} opacity-90`}
                           >
                             {skill}
                           </span>
                         ))}
-                        {remaining > 0 && !isExpanded && (
-                          <button
-                            onClick={() => toggleGroup(index)}
-                            className={`px-2 py-1 rounded text-[11px] sm:text-xs font-semibold
-                                       cursor-pointer select-none
-                                       ${group.tagClass}
-                                       ring-1 ring-inset ring-current/25
-                                       hover:opacity-100 hover:ring-current/50 hover:scale-105
-                                       active:scale-95
-                                       transition-all duration-150
-                                       opacity-70`}
-                            title={`Показать ещё ${remaining} навыка`}
-                          >
-                            ещё {remaining}
-                          </button>
-                        )}
-                        {isExpanded && (
-                          <button
-                            onClick={() => toggleGroup(index)}
-                            className="px-2 py-1 rounded text-[11px] sm:text-xs font-semibold
-                                       cursor-pointer select-none
-                                       text-gray-400 bg-gray-50
-                                       ring-1 ring-inset ring-gray-200
-                                       hover:text-gray-600 hover:ring-gray-300
-                                       active:scale-95
-                                       transition-all duration-150"
-                            title="Свернуть"
-                          >
-                            скрыть
-                          </button>
-                        )}
                       </div>
+                      {remaining > 0 && !isExpanded && (
+                        <button
+                          onClick={() => toggleGroup(index)}
+                          className={`mt-2 inline-flex items-center px-2.5 py-1 rounded text-[11px] sm:text-xs font-semibold
+                                     cursor-pointer select-none
+                                     ${group.tagClass}
+                                     ring-1 ring-inset ring-current/25
+                                     hover:opacity-100 hover:ring-current/50
+                                     active:scale-95
+                                     transition-all duration-150
+                                     opacity-80`}
+                          title={`Показать ещё ${remaining} навыка`}
+                        >
+                          ещё {remaining}
+                        </button>
+                      )}
+                      {isExpanded && (
+                        <button
+                          onClick={() => toggleGroup(index)}
+                          className="mt-2 inline-flex items-center px-2.5 py-1 rounded text-[11px] sm:text-xs font-semibold
+                                     cursor-pointer select-none
+                                     text-gray-500 bg-gray-50
+                                     ring-1 ring-inset ring-gray-200
+                                     hover:text-gray-700 hover:ring-gray-300
+                                     active:scale-95
+                                     transition-all duration-150"
+                          title="Свернуть"
+                        >
+                          скрыть
+                        </button>
+                      )}
                     </div>
                   );
                 })}
