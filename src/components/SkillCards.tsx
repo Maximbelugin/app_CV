@@ -81,7 +81,15 @@ const skillCategories: SkillCategory[] = [
     bgColor: "bg-orange-50",
     borderColor: "border-orange-200",
     icon: <Database className="w-8 h-8" />,
-    skills: ["SQL", "PostgreSQL", "Spark", "DBeaver", "SQL Management Studio"],
+    skills: [
+      "SQL",
+      "PostgreSQL",
+      "Spark",
+      "DBeaver",
+      "SQL Management Studio",
+      "Python (pandas, numpy)",
+      "Jupyter Notebook",
+    ],
   },
   {
     title: "Инструменты и процессы",

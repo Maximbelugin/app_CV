@@ -54,7 +54,15 @@ const skillGroups = [
     title: "Данные и БД",
     tagClass: "bg-orange-50 text-orange-700",
     titleClass: "text-orange-600",
-    skills: ["SQL", "PostgreSQL", "Spark"],
+    skills: [
+      "SQL",
+      "PostgreSQL",
+      "DBeaver",
+      "Spark",
+      "SQL Management Studio",
+      "Python (pandas, numpy)",
+      "Jupyter Notebook",
+    ],
   },
   {
     title: "Инструменты и процессы",
@@ -288,12 +296,16 @@ export function CustomHero() {
 
               {/* Floating badges */}
               <div className="absolute bottom-1 sm:bottom-2 -left-2 sm:-left-4 lg:-left-6 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg px-2.5 py-2 sm:p-3 border border-gray-100">
-                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-600">20+</div>
+                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-600">
+                  20+
+                </div>
                 <div className="text-xs text-gray-500">лет опыта</div>
               </div>
 
               <div className="absolute top-1 sm:top-2 -right-2 sm:-right-4 lg:-right-6 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg px-2.5 py-2 sm:p-3 border border-gray-100">
-                <div className="text-sm sm:text-base font-bold text-emerald-600">15+</div>
+                <div className="text-sm sm:text-base font-bold text-emerald-600">
+                  15+
+                </div>
                 <div className="text-xs text-gray-500">успешных проектов</div>
               </div>
             </div>
